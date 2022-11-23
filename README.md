@@ -14,4 +14,4 @@ Created Netflix clone API that performs CRUD operations on users, shows, watchli
 
 ## Deployment:
 
-[Live Site]()
+[Live Site](https://netflix--api.up.railway.app)
