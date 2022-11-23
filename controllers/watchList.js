@@ -1,4 +1,4 @@
-const WatchList = require("../models/watchList");
+const WatchList = require("../models/WatchList");
 const CustomError = require("../errors");
 const { StatusCodes } = require("http-status-codes");
 const checkPerms = require("../utils/checkPerms");
