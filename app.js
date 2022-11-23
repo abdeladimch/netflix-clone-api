@@ -28,11 +28,6 @@ const watchlistRouter = require("./routes/watchList");
 
 const connectDB = require("./db/connect");
 
-app.use(express.json());
-app.use(express.static("public"));
-app.use(cookieParser(process.env.JWT_SECRET));
-app.use(fileUpload());
-
 app.set("trust proxy", 1);
 app.use(
   rateLimiter({
@@ -40,10 +35,16 @@ app.use(
     max: 50,
   })
 );
+
 app.use(cors());
 app.use(mongoSanitize());
 app.use(helmet());
 app.use(xss());
+
+app.use(express.json());
+app.use(express.static("public"));
+app.use(cookieParser(process.env.JWT_SECRET));
+app.use(fileUpload());
 
 app.use("/api/auth", authRouter);
 app.use("/api/users", userRouter);
